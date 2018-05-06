@@ -52,7 +52,7 @@ export const ROUTES: Routes = [
     canActivate: [AuthGuard] 
   },
   { 
-    path: 'librosAdd',
+    path: 'booksAdd',
     component: BooksAddComponent,
     canActivate: [AuthGuard] 
   },

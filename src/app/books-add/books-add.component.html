@@ -1,5 +1,5 @@
 <h2 class="form-signin-heading font-weight-bold">Añadir Libro</h2>
-<form (ngSubmit)="Add()" class="form-signin">
+<form (ngSubmit)="Add()">
   <div class="form-group">
     <label for="isbn">ISBN</label>
     <input type="text" class="form-control" id="isbn" [(ngModel)]="book.isbn" placeholder="ISBN">
@@ -23,7 +23,4 @@
   <div class="form-group">
     <label for="autor">Autor</label>
   </div>
-  
-
-
 </form>
