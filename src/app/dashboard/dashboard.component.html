@@ -1,0 +1,98 @@
+<article>
+  <h2>Dashboard</h2>
+  <h3>Money: {{totalMoney}}</h3>
+  <h3>Total number of orders: {{totalOrders}}</h3>
+  <h3>Total number of users: {{totalUsers}}</h3>
+</article>
+<article>
+  <h2>Last orders</h2>
+  <section>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">total</th>
+          <th scope="col">fecha</th>
+          <th scope="col">calle</th>
+          <th scope="col">numero</th>
+          <th scope="col">puerta</th>
+          <th scope="col">codigo_postal</th>
+          <th scope="col">usuario_id</th>
+          <th scope="col">pagado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of lastOrders">
+          <td>{{order.total}}</td>
+          <td>{{order.fecha}}</td>
+          <td>{{order.calle}}</td>
+          <td>{{order.numero}}</td>
+          <td>{{order.puerta}}</td>
+          <td>{{order.codigo_postal}}</td>
+          <td>{{order.usuario_id}}</td>
+          <td>{{order.pagado}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</article>
+<article>
+  <h2>Last books</h2>
+  <section>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">titulo</th>
+          <th scope="col">isbn</th>
+          <th scope="col">n_pags</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of lastBooks">
+          <td>{{book.titulo}}</td>
+          <td>{{book.isbn}}</td>
+          <td>{{book.n_pags}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</article>
+<article>
+  <h2>Last Registered Users</h2>
+  <section>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">name</th>
+          <th scope="col">email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of lastRegisteredUsers">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</article>
+<article>
+  <h2>Last created comments</h2>
+  <section>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">autor</th>
+          <th scope="col">voto</th>
+          <th scope="col">validado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let comment of lastCreatedComments">
+          <td>{{comment.autor}}</td>
+          <td>{{comment.voto}}</td>
+          <td>{{comment.validado}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</article>

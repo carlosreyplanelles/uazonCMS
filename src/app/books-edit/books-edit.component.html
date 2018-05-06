@@ -1,0 +1,7 @@
+<form (ngSubmit)="edit()" class="form-signin">
+  <h2 class="form-signin-heading font-weight-bold">Editar Autor</h2>
+  <div class="form-group">
+      <input class="form-control" type="text" [(ngModel)]="this.autor.nombre" name="nombre"placeholder="Nombre">
+  </div> 
+<button class="btn btn-lg btn-primary btn-block" type="submit">Confirmar</button>
+</form>

@@ -1,0 +1,21 @@
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th scope="col">Titulo</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let libro of libros">
+      <td>{{libro.id}}</td>
+      <td>{{libro.titulo}}</td>
+      <td>
+        <button class="btn btn-md btn-primary" (click)="showEdit(libro.id, libro.titulo)">Editar</button>
+        <button class="btn btn-md btn-primary" (click)="delete(libro.id,libro.titulo)">Borrar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="showAdd()" class="btn btn-lg btn-primary btn-block">Añadir libro</button>

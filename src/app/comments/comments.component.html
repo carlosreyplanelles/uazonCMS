@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Descripcion</th>
+      <th>Voto</th>
+      <th>Id de libro</th>
+      <th>Validado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comment of commentList">
+      <td>{{comment.id}}</td>
+      <td>{{comment.autor}}</td>
+      <td>{{comment.descripcion}}</td>
+      <td>{{comment.voto}}</td>
+      <td>{{comment.libro_id}}</td>
+      <td>{{comment.validado}}</td>
+      <td>
+        <button class="btn btn-md btn-primary" (click)="changeStatus(comment.id,comment.autor,comment.validado)">Validar</button>
+        <button class="btn btn-md btn-primary" (click)="delete(comment.id,comment.autor)">Borrar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
