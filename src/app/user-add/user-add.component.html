@@ -1,0 +1,21 @@
+<h2 class="form-signin-heading font-weight-bold">Añadir Libro</h2>
+<form (ngSubmit)="Add()">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input class="form-control" id="nombre" type="text" [(ngModel)]="user.nombre" name="nombre" placeholder="nombre">
+    </div>
+    <div class="form-group">
+        <label for="titulo">Correo</label>
+        <input class="form-control" type="email" [(ngModel)]="user.email" id="email" name="email" placeholder="email">
+    </div>
+    <div class="form-group">
+        <label for="n_pags">Password</label>
+        <input class="form-control" type="password" [(ngModel)]="user.password" id="password" name="password" placeholder="password">
+    </div>
+    <div class="form-group">
+        <label for="precio">Direccion</label>
+        <input class="form-control" type="password" [(ngModel)]="user.direccion" id="direccion" name="direccion" placeholder="direccion">
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Añadir</button>
+</form>

@@ -1,0 +1,21 @@
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{libro.id}}</td>
+      <td>{{libro.nombre}}</td>
+      <td>
+        <button class="btn btn-md btn-primary" (click)="showEdit(user.id, user.nombre)">Editar</button>
+        <button class="btn btn-md btn-primary" (click)="delete(user.id,user.nombre)">Borrar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="showAdd()" class="btn btn-lg btn-primary btn-block">Añadir Usuario</button>

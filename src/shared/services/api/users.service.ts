@@ -10,7 +10,7 @@ export class UserService {
     }
 
     getAll() {
-        return this.apiService.get('users').map(res => res.data).map(users => {
+        return this.apiService.get('users').map(res => res).map(users => {
             let array = [];
             for(let user of users) {
                 array.push(new User(user));

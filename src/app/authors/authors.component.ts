@@ -33,7 +33,6 @@ export class AuthorsComponent implements OnInit {
   showEdit(id, nombre){
     localStorage.setItem('authorId', id);
     localStorage.setItem('authorName', nombre);
-    alert(localStorage.getItem('authorName'))
     this.router.navigate(['autoresEdit/'+id]);
   }
   

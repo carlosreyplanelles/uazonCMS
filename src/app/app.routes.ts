@@ -12,6 +12,9 @@ import { ConfigurationComponent } from './configuration/configuration.component'
 import { CommentsComponent } from './comments/comments.component';
 import { BooksComponent } from './books/books.component';
 import {BooksAddComponent} from './books-add/books-add.component';
+import { BooksEditComponent } from './books-edit/books-edit.component';
+import { UserComponent } from './user/user.component';
+import { UsersAddComponent } from './user-add/user-add.component';
 
 export const ROUTES: Routes = [
   { path: '', component: DashboardComponent, canActivate: [AuthGuard]  },  
@@ -55,6 +58,26 @@ export const ROUTES: Routes = [
     path: 'booksAdd',
     component: BooksAddComponent,
     canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'booksEdit/:id',
+    component: BooksEditComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+  path: 'users',
+    component: UserComponent,
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'usersAdd',
+    component: UsersAddComponent,
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'usersEdit/:id',
+    component: UserEditComponent,
+    canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '' }
 ];

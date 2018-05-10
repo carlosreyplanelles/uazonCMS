@@ -25,18 +25,22 @@ export class BooksComponent implements OnInit {
   }
 
   showEdit(id, nombre){
-    localStorage.setItem('authorId', id);
-    localStorage.setItem('authorName', nombre);
-    alert(localStorage.getItem('authorName'))
+    localStorage.setItem('bookId', id);
     this.router.navigate(['booksEdit/'+id]);
   }
   
   delete(id, name){
-    let msg = confirm("¿Desea eliminar al autor "+ name+"?");
+    let msg = confirm("¿Desea eliminar el libro "+ name+"?");
     if(msg)
     {
       this.bookService.delete(id).subscribe(res => { console.log(res); });
-      this.router.navigate(['books']);
+      this.bookService.getAll().subscribe(
+        res =>{
+          this.libros = res;
+        },
+        error => {
+          console.log(error);
+        });
     }    
   }
 

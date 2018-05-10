@@ -12,7 +12,6 @@ export class BookService {
     getAll() {
         return this.apiService.get('libros').map(res => res).map(books => {
             let array = [];
-            alert(books)
             for(let book of books) {
                 array.push(new Book(book));
             }
@@ -21,18 +20,18 @@ export class BookService {
     }
 
     find(bookId) {
-        return this.apiService.get('books/'+bookId).do(res => new Array<Book>(res));
+        return this.apiService.get('libros/'+bookId).do(res => new Array<Book>(res));
     }
 
     createNew(book: Book) {
-        return this.apiService.post('books',book);
+        return this.apiService.post('libros',book);
     }
 
     update(id,book: Book) {
-        return this.apiService.put('books/'+id,book);
+        return this.apiService.put('libros/'+id,book);
     }
 
     delete(id) {
-        return this.apiService.delete('books/'+id);
+        return this.apiService.delete('libros/'+id);
     }
 }

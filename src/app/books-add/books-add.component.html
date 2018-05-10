@@ -1,26 +1,30 @@
 <h2 class="form-signin-heading font-weight-bold">Añadir Libro</h2>
 <form (ngSubmit)="Add()">
-  <div class="form-group">
-    <label for="isbn">ISBN</label>
-    <input type="text" class="form-control" id="isbn" [(ngModel)]="book.isbn" placeholder="ISBN">
-  </div>
-  <div class="form-group">
-    <label for="tiulo">titulo</label>
-    <input type="text" class="form-control" id="titulo" [(ngModel)]="book.titulo" placeholder="titulo">
-  </div>
-  <div class="form-group">
-    <label for="paginas">Páginas</label>
-    <input type="text" class="form-control" id="paginas" [(ngModel)]="book.n_pags" placeholder="páginas">
-  </div>
-  <div class="form-group">
-    <label for="precio">Precio</label>
-    <input type="text" class="form-control" id="precio" [(ngModel)]="book.n_pags" placeholder="páginas">
-  </div>
-  <div class="form-group">
-    <label for="editorial">Editorial</label>
-    <input type="text" class="form-control" id="editorial" [(ngModel)]="book.editorial" placeholder="páginas">
-  </div>
-  <div class="form-group">
-    <label for="autor">Autor</label>
-  </div>
+    <div class="form-group">
+      <label for="isbn">ISBN</label>
+      <input class="form-control" id="isbn" type="text" [(ngModel)]="book.isbn" name="isbn" placeholder="isbn">
+    </div>
+    <div class="form-group">
+        <label for="titulo">Título</label>
+        <input class="form-control" type="text" [(ngModel)]="book.titulo" id="titulo" name="titulo" placeholder="titulo">
+    </div>
+    <div class="form-group">
+        <label for="n_pags">Páginas</label>
+        <input class="form-control" type="number" [(ngModel)]="book.n_pags" id="n_pags" name="n_pags" placeholder="paginas">
+    </div>
+    <div class="form-group">
+        <label for="precio">Precio</label>
+        <input class="form-control" type="number" [(ngModel)]="book.precio" id="precio" name="precio" placeholder="20.00">
+    </div>
+    <div class="form-group">
+        <label for="n_pags">Editorial</label>
+        <input class="form-control" type="text" [(ngModel)]="book.editorial" id="editorial" name="editorial" placeholder="editorial">
+    </div>
+    <div class="form-group">
+        <label for="autor">Autor</label>
+        <select (change)="selectedAuthor($event)" class="form-control" id="autor">
+          <option *ngFor="let autor of autores" [value]="autor.id">{{autor.nombre}}</option>
+        </select>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Añadir</button>
 </form>
