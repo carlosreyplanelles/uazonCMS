@@ -27,6 +27,9 @@ import { CommentsComponent } from './comments/comments.component';
 import { BooksComponent } from './books/books.component';
 import { BooksAddComponent } from './books-add/books-add.component';
 import { BooksEditComponent } from './books-edit/books-edit.component';
+import { UserComponent } from './user/user.component';
+import { UsersAddComponent } from './user-add/user-add.component';
+import { UsersEditComponent } from './user-edit/user-edit.component';
 
 
 @NgModule({
@@ -42,7 +45,10 @@ import { BooksEditComponent } from './books-edit/books-edit.component';
     CommentsComponent,
     BooksComponent,
     BooksAddComponent,
-    BooksEditComponent
+    BooksEditComponent,
+    UserComponent,
+    UsersAddComponent,
+    UsersEditComponent
   ],
   imports: [
     BrowserModule,

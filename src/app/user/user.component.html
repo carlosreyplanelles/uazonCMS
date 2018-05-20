@@ -9,8 +9,8 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of users">
-      <td>{{libro.id}}</td>
-      <td>{{libro.nombre}}</td>
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
       <td>
         <button class="btn btn-md btn-primary" (click)="showEdit(user.id, user.nombre)">Editar</button>
         <button class="btn btn-md btn-primary" (click)="delete(user.id,user.nombre)">Borrar</button>

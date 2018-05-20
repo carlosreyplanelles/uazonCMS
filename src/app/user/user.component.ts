@@ -4,19 +4,22 @@ import { UserService } from '../../shared/services/api/users.service';
 
 @Component({
   selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
   users=[];
   constructor(private router: Router,private UserService: UserService) {}
   showAdd(){
-    this.router.navigate(['booksAdd']);
+    this.router.navigate(['usersAdd']);
   }
  
   ngOnInit() {
+
     this.UserService.getAll().subscribe(
       res =>{
+        alert ("ENTRO")
+        console.log ("USUARIOS: "+res)
         this.users = res;
       },
       error => {

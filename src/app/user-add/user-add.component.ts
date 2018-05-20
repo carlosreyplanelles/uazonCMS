@@ -8,25 +8,24 @@ import { User } from '../../shared/models/user';
 
 @Component({
   selector: 'app-users-add',
-  templateUrl: './users-add.component.html',
-  styleUrls: ['./users-add.component.css']
+  templateUrl: './user-add.component.html',
+  styleUrls: ['./user-add.component.css']
 })
 export class UsersAddComponent implements OnInit {
 
   constructor(public router: Router, private UserService: UserService) { }
   usr={
-    nombre: "",
+    name: "",
     password: "",
-    Direccion: "",
-    correo: "",
+    address: "",
+    email: "",
   }
   user:User;
  
   ngOnInit() {}
-  selectedAuthor(event : any){
-  }
+
   Add(){
-    
+
     this.user = new User(this.usr);
     this.UserService.createNew(this.user).subscribe(res => { 
       alert("Usuario creado");
@@ -34,7 +33,7 @@ export class UsersAddComponent implements OnInit {
       return this.user;
     },
     error => {
-      alert(error.message)
-    });
-  }
+      alert(error.message);
+  });
+}
 }

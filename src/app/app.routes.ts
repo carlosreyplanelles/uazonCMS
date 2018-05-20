@@ -15,6 +15,7 @@ import {BooksAddComponent} from './books-add/books-add.component';
 import { BooksEditComponent } from './books-edit/books-edit.component';
 import { UserComponent } from './user/user.component';
 import { UsersAddComponent } from './user-add/user-add.component';
+import { UsersEditComponent } from './user-edit/user-edit.component'
 
 export const ROUTES: Routes = [
   { path: '', component: DashboardComponent, canActivate: [AuthGuard]  },  
@@ -76,7 +77,7 @@ export const ROUTES: Routes = [
   },
   { 
     path: 'usersEdit/:id',
-    component: UserEditComponent,
+    component: UsersEditComponent,
     canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '' }

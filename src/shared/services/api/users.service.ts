@@ -10,7 +10,9 @@ export class UserService {
     }
 
     getAll() {
+        
         return this.apiService.get('users').map(res => res).map(users => {
+            alert (users)
             let array = [];
             for(let user of users) {
                 array.push(new User(user));
@@ -24,7 +26,7 @@ export class UserService {
     }
 
     createNew(user: User) {
-        return this.apiService.post('users',JSON.stringify(user));
+        return this.apiService.post('users',user);
     }
 
     update(id,user: User) {
